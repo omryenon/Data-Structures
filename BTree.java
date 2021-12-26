@@ -32,7 +32,7 @@ public class BTree<T extends Comparable<T>> {
         this.maxChildrenSize = maxKeySize + 1;
     }
     
-    //Task 2.1
+    //This is 1-pass insertion
     public boolean insert(T value) {
         if (root == null) {                                              //insert to an empty tree
             root = new Node<T>(null, maxKeySize, maxChildrenSize);
@@ -161,7 +161,7 @@ public class BTree<T extends Comparable<T>> {
         return removed;
     }
     
-	//Task 2.2
+	//This is 2-pass insertion
     public boolean insert2pass(T value) {
         if (root == null) {
             root = new Node<T>(null, maxKeySize, maxChildrenSize);
