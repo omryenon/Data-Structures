@@ -3,7 +3,7 @@ public class BacktrackingBST implements Backtrack, ADTSet<BacktrackingBST.Node> 
     private Stack redoStack;
     BacktrackingBST.Node root = null;
 
-    // Do not change the constructor's signature
+    
     public BacktrackingBST(Stack stack, Stack redoStack) {
         this.stack = stack;
         this.redoStack = redoStack;
@@ -247,6 +247,7 @@ public class BacktrackingBST implements Backtrack, ADTSet<BacktrackingBST.Node> 
         }
     }
 
+    // cancels the last insert() or delete() called by a user (ctrl+z)
     @Override
     public void backtrack() {
         if(!stack.isEmpty()) {
@@ -393,7 +394,8 @@ public class BacktrackingBST implements Backtrack, ADTSet<BacktrackingBST.Node> 
            System.out.println("backtracking performed");
         }
     }
-
+    // cancels the cancellation of the last insert() or  
+    // delete() cancelled by a backtrack (ctrl+y)
     @Override
     public void retrack() {
         if (!redoStack.isEmpty()) {
